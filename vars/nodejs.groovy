@@ -1,6 +1,7 @@
 def call(Map stageParams) {
     sh "npm install"
     sh "npm audit fix --force"
+    sh "npm run build"
     sh "npm test"
     sh "sonar-scanner"
     sh "jf rt u test/config.json nodejs/"
